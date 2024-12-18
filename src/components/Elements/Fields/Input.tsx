@@ -1,14 +1,13 @@
 import React from "react";
-
 import { InputProps } from "../../../Interfaces/elements";
 import { FieldWrapper, FlexyWrapper } from "../../Wrappers";
 
 import style from "./style.module.css";
 
-const options = ({ required = true, name }: any) => {
+const options = ({ required = true, name, label = null }: any) => {
     let data = {};
     if (required) {
-        data["required"] = `${name} is required`;
+        data["required"] = `${label || name} is required`;
     }
     if (name === "email") {
         data["pattern"] = {
@@ -21,7 +20,6 @@ const options = ({ required = true, name }: any) => {
 }
 
 export default function Input(props: InputProps) {
-
     const { name, required = true, value, type = "text", error, onChange, icon: Icon = null, className = "", label = null, register } = props;
 
     const handleChange = (e) => {
@@ -30,18 +28,12 @@ export default function Input(props: InputProps) {
 
     return (
         <FlexyWrapper gap={4} direction="column" className={style.wrap}>
-            {
-                label && <label className={style.label} htmlFor={name}>
-                    {required && <span>*</span>}
-                    {label}
-                </label>
-            }
+            {label && <label className={style.label} htmlFor={name}>
+                {required && <span>*</span>}
+                {label}
+            </label>}
             <FieldWrapper className={className}>
-                {
-                    Icon && (<div className={style.icon}>
-                        <Icon />
-                    </div>)
-                }
+                {Icon && (<div className={style.icon}><Icon /></div>)}
                 <input
                     {...register(name, options(props))}
                     id={name}
@@ -49,8 +41,8 @@ export default function Input(props: InputProps) {
                     defaultValue={value}
                     onChange={handleChange}
                 />
-                {error && <p style={{ color: 'red' }}>{error.message}</p>}
             </FieldWrapper>
+            {error && <p className={style.error}>{error.message}</p>}
         </FlexyWrapper>
-    )
+    );
 }

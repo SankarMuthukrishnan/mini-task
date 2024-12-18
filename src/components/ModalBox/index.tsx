@@ -46,7 +46,7 @@ const ModalBox = ({ isOpen = true, onClose, title, children, footer = false, cla
                     title && (
                         <div className={style.header}>
                             <h3 className={style.title}>{title}</h3>
-                            <button className={style.close} onClick={handleClose}>
+                            <button className={style.close} onClick={handleClose} id="modal-close-btn">
                                 &times;
                             </button>
                         </div>

@@ -1,4 +1,4 @@
-.wrap{
+.wrap {
     width: 100%;
 }
 
@@ -14,11 +14,14 @@
     padding-left: 24px;
 }
 
-.label{
-
+.error {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-top: 4px;
+    transition: all .6s;
 }
 
-.label span{
+.label span {
     color: var(--secondary-color);
     padding-right: 2px;
 }

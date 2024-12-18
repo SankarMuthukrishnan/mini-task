@@ -38,7 +38,7 @@ export interface SearchBoxProps {
 export interface ModalProps {
     isOpen?: boolean
     onClose: () => void
-    onSubmit: () => void
+    onSubmit?: () => void
     title?: string
     children: ReactNode
     footer?: boolean
