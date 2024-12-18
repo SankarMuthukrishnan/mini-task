@@ -1,0 +1,11 @@
+.deleteModal>div {
+    min-height: unset;
+}
+
+.deleteModal button+button {
+    background-color: var(--secondary-color);
+}
+
+.content {
+    text-align: center;
+}

@@ -1,0 +1,24 @@
+.wrap{
+    width: 100%;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    height: 16px;
+}
+
+.icon+input {
+    padding-left: 24px;
+}
+
+.label{
+
+}
+
+.label span{
+    color: var(--secondary-color);
+    padding-right: 2px;
+}

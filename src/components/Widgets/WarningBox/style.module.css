@@ -1,0 +1,32 @@
+.warnBox {
+    width: 100%;
+    text-align: center;
+}
+
+.warnBox .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    margin: auto;
+    background-color: #ff4d4f29;
+    border-radius: 50%;
+    color: var(--secondary-color);
+}
+
+.warnBox .icon>svg {
+    font-size: 24px;
+}
+
+.warnBox .msg {
+    padding-top: 12px;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.info {
+    font-size: 13px;
+    opacity: .6;
+}
